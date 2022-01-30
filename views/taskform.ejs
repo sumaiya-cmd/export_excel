@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="/taskassign"
+        style="width: 50%; box-shadow: -5px 10px 20px rgb(228, 227, 227); 
+    padding: 20px; border-radius: 10px; background-color: rgb(246, 249, 255); position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);">
+
+        <h1>Add task details of the users </h1>
+
+        <div class="mt-4">
+            <label class="form-label">User</label>
+            <select name="select" class="form-select" aria-label="Default select example">
+                <option selected>example user</option>
+                <% users.forEach(function(user , index){ %>
+                    <option name="user<%= index %>" value="<%= user.name %>"><%= user.name %></option>
+                <% }) %>
+              </select>
+        </div>
+
+        <div class="mt-4">
+            <label class="form-label">Task name</label>
+            <input name="task_name" type="" placeholder="task name" class="form-control"  id="task_name"
+                >
+        </div>
+
+        <div class="mt-4">
+            <label for="type" class="form-label">Task type</label>
+            <select name="select1" class="form-select" aria-label="Default select example">
+                <option selected>example user</option>
+                <option  value="pending">Pending</option>
+                <option  value="done">Done</option>
+              </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+
+    </form>
+
+</body>
+
+</html>
